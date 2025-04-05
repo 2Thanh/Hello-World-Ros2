@@ -18,8 +18,8 @@ class JointStatePublisher(Node):
             self.joint_positions_callback,
             10)
             
-        self.joint_names = ['joint1', 'joint2']
-        self.positions = [0.0, 0.0]
+        self.joint_names = ['joint1', 'joint2', 'joint3', 'joint4']
+        self.positions = [0.0, 0.0, 0.0, 0.0]
         self.get_logger().info('Joint State Publisher started. Use "ros2 topic pub /joint_positions std_msgs/msg/Float32MultiArray ..." to set positions.')
         
         # Publish joint state periodically

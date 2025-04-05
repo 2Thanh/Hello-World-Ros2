@@ -43,7 +43,7 @@ def generate_launch_description():
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
-            name='map_to_base_link',  # Updated name for clarity
-            arguments=['0', '0', '0', '0', '0', '0', 'map', 'base_link']  # Connect map to base_link
+            name='map_to_world',
+            arguments=['0', '0', '0', '0', '0', '0', 'map', 'world']
         )
     ])
