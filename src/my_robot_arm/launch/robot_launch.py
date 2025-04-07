@@ -35,15 +35,22 @@ def generate_launch_description():
             output='screen'
         ),
         Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            output='screen'
+            package="rviz2",
+            executable="rviz2",
+            name="rviz2",
+            output="screen",
+            arguments=["-d", PathJoinSubstitution([
+                FindPackageShare("my_robot_arm"),
+                "rviz",
+                "arm_config.rviz"
+            ])]
         ),
+
+        # Optional Static Transform between map and world
         Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='map_to_world',
-            arguments=['0', '0', '0', '0', '0', '0', 'map', 'world']
+            package="tf2_ros",
+            executable="static_transform_publisher",
+            name="map_to_world",
+            arguments=["0", "0", "0", "0", "0", "0", "map", "world"]
         )
     ])

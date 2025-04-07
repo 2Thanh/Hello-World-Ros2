@@ -19,8 +19,8 @@ class JointPositionPublisher(Node):
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
         
         # Initialize trajectory variables
-        self.current_positions = [0.0, 0.0, 0.0, 0.0]
-        self.target_positions = [0.0, 0.0, 0.0, 0.0]
+        self.current_positions = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.target_positions = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         self.trajectory_points = []
         self.trajectory_index = 0
         self.is_moving = False
@@ -114,15 +114,15 @@ def main(args=None):
     try:
         # Example: send a sequence of joint positions
         positions_to_send = [
-            [0.0, 0.0, 0.0, 0.0],
-            [0.5, 0.5, 0.0, 0.0],
-            [1.0, 0.0, 0.0, 0.0],
-            [0.5, -0.5, 0.0, 0.0],
-            [0.0, -1.0, 0.0, 0.0],
-            [-0.5, -0.5, 0.0, 0.0],
-            [-1.0, 0.0, 0.0, 0.0],
-            [-0.5, 0.5, 0.0, 0.0],
-            [0.0, 0.0, 0.0, 0.0]
+            [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            [0.5, 0.5, 0.0, 0.0, 0.0, 0.0],
+            [1.0, 1.0, 1.0, 1.0, 0.0, 0.0],
+            [0.5, -0.5, 0.0, 0.0, 0.0, 0.0],
+            [0.0, -1.0, 0.0, 0.0, 0.0, 0.0],
+            [-0.5, -0.5, 0.0, 0.0, 0.0, 0.0],
+            [-1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            [-0.5, 0.5, 0.0, 0.0, 0.0, 0.0],
+            [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         ]
         
         for positions in positions_to_send:
